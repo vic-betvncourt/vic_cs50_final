@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <meta name="viewport" content="initial-scale=1, width=device-width">
-        <title>hello</title>
-    </head>
-    <body>
-       Woah
-    </body>
-</html>
+{% block body %}
+      
+    {% for photo in animal_photos %}
+        <img src="{{photo['medium']}}">
+    {% endfor %}
+
+{% endblock %}

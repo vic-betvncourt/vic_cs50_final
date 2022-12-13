@@ -48,6 +48,11 @@ def results():
         
         animalsjson = animal_req.json()
 
-        print(animalsjson['animals'][0]['photos'])
-        return render_template("results.html")
+        animalsdict = animalsjson['animals']
+        for animal in animalsdict:
+            animal_photos = animal['photos']
+            for x in animal_photos:
+                print(x['medium'])
+                #animal_photos = x['medium']
+        return render_template("results.html", animal_photos=animal_photos)
     return render_template("index.html")
