@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/git_update', methods="POST")
 def git_update():
-    repo = git.repo(./vic_cs50_final)
+    repo = git.repo(/vic_cs50_final)
     origin = repo.remotes.origin
     repo.create_head('main',
     origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
