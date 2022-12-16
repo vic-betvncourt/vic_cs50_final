@@ -1,9 +1,19 @@
 {% extends "layout.html" %}
 
 {% block body %}
-      
-    {% for photo in animal_photos %}
-        <img src="{{photo['medium']}}">
-    {% endfor %}
-
+    <div class="container">
+        <div class="row">
+            <!-- looping through api request -->
+            {% for pet in animalsdict %}
+                <!-- looping through images -->
+                {% for photo in pet['photos']%}
+                    <!-- creating cards to display pet's photos and names -->
+                    <div class="col-md-4">
+                        <img src="{{photo['medium']}}" width="100%">
+                        <p>{{pet['name']}}</p>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

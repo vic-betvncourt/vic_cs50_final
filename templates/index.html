@@ -1,11 +1,7 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <meta name="viewport" content="initial-scale=1, width=device-width">
-        <title>hello</title>
-    </head>
-    <body>
+{% block body %}
+    <!-- form to request the type of animal user is looking for -->
         <form action="/results" method="get">
             <select name="animal_type">
                 <option disabled selected>Animal</option>
@@ -14,5 +10,4 @@
             </select>
             <input type="submit">
         </form>
-    </body>
-</html>
+{% endblock %}

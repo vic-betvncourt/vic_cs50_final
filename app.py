@@ -46,13 +46,17 @@ def results():
         
         #requests.get(url, params=None, headers=None, cookies=None, auth=None, timeout=None)
         
+        # assigning json returned from api request
         animalsjson = animal_req.json()
-
         animalsdict = animalsjson['animals']
-        for animal in animalsdict:
-            animal_photos = animal['photos']
-            for x in animal_photos:
-                print(x['medium'])
-                #animal_photos = x['medium']
-        return render_template("results.html", animal_photos=animal_photos)
-    return render_template("index.html")
+
+        # variable to hold image for those animals without photos
+        noimg = [{"medium":"static/unavailable-image.jpg"}]
+
+        # parsing through images to see if any are missing and assigning our missing image photo
+        for x in range(len(animalsdict)):
+            if not animalsdict[x]['photos']:
+                animalsdict[x]['photos'] = noimg
+
+        # rendering and passing results from the api request 
+        return render_template("results.html", animalsdict=animalsdict)
