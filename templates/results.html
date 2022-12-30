@@ -3,14 +3,23 @@
 {% block body %}
     <div class="container">
         <div class="row">
+            {% if animalsdict|length == 0 %}
+                <h4 class="text-center">Sorry, looks like there are no pets in your area</h4>
+            {% endif %}
             <!-- looping through api request -->
             {% for pet in animalsdict %}
                 <!-- looping through images -->
                 {% for photo in pet['photos']%}
                     <!-- creating cards to display pet's photos and names -->
                     <div class="col-md-4">
-                        <img src="{{photo['medium']}}" width="100%">
-                        <p>{{pet['name']}}</p>
+                        <div class="card card-style">
+                            <img class="card-img-top" src="{{photo['medium']}}" width="100%">
+                            <div class="card-body">
+                             <h5 class="card-text">{{pet['name']}} | {{pet['age']}}</h5>
+                             <p>{{pet['description']}}</p>
+                             <button type="button" class="btn"><a href="{{pet['url']}}" target="_blank">Learn more</a></button>
+                            </div>
+                        </div>
                     </div>
                 {% endfor %}
             {% endfor %}

@@ -1,0 +1,49 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcfce1;
+    color: #696a6b;
+}
+
+h2 {
+    font-weight: 900;
+    color: #2b5480;
+}
+
+.form-homepage {
+    background-color: white;
+    border-radius: 2em;
+}
+
+.select-form {
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: .75em;
+    color: #2b5480;
+}
+
+.submit-btn {
+    background-color: #2b5480;
+    color: white;
+    padding: 1em;
+    border-radius: 1em;
+    border: none;
+}
+
+.select-form select option {
+    background: #fcfce1;
+}
+
+.zip-text {
+    border-width: 0 0 .1em 0;
+    outline: none;
+}
+
+.card-style {
+    border: none;
+    border-radius: 1.5em;
+    margin-bottom: 1em;
+}
+
+.card-style img {
+    border-radius: 1.5em;
+}
