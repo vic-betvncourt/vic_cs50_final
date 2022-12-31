@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="container-fluid text-center hero">
+        <div class="overlay d-flex align-items-center justify-content-center">
+            <h1>Let us help you find your perfect pet match</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1601758177266-bc599de87707?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" width="100%">
+            </div>
+            <div class="col-md-6 py-5">
+                <h3>Give a pet a good home</h3>
+                <p class="pb-3">
+                    Adopting a pet is a wonderful experience, that would give your 
+                    family life-long memories. By adopting you are giving a second 
+                    chance to those pets whose world was ripped away through no fault of their own.
+                </p>
+                <form action="/index">
+
+                    <input type="submit" class=" btn btn-outline-primary" value="Find Your Pet Match"> 
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

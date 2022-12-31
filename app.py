@@ -20,6 +20,10 @@ def zipcode():
     return zip_list[request.args.get('zip')][0]
 
 @app.route("/")
+def home():
+    return render_template("homepage.html")
+
+@app.route("/index")
 def index():
 
 

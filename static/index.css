@@ -1,16 +1,29 @@
+:root {
+    --blue: #395bb8;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fcfce1;
+    /* background-color: #fcfce1; */
     color: #696a6b;
 }
 
 h2 {
     font-weight: 900;
-    color: #2b5480;
+    color: var(--blue);
+}
+
+h3 {
+    font-weight: 700;
+    color: var(--blue);
+}
+
+h5 {
+    color: var(--blue);
 }
 
 .form-homepage {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.75);
     border-radius: 2em;
 }
 
@@ -18,11 +31,11 @@ h2 {
     border: none;
     font-family: 'Poppins', sans-serif;
     font-size: .75em;
-    color: #2b5480;
+    color: var(--blue);
 }
 
 .submit-btn {
-    background-color: #2b5480;
+    background-color: var(--blue);
     color: white;
     padding: 1em;
     border-radius: 1em;
@@ -36,6 +49,8 @@ h2 {
 .zip-text {
     border-width: 0 0 .1em 0;
     outline: none;
+    background: none;
+    border-color: var(--blue);
 }
 
 .card-style {
@@ -46,4 +61,56 @@ h2 {
 
 .card-style img {
     border-radius: 1.5em;
+}
+
+.hero {
+    background-image: url("https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80");
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    color: white;
+    padding-top: 8em;
+}
+
+.btn {
+    background: white;
+    border: solid;
+    border-width: .15em;
+    border-radius: 2em;
+    padding: 1em;
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.btn a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.btn:hover {
+    color: white;
+    background: var(--blue);
+    border: none;
+}
+
+.btn:hover a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+#pet-form {
+    background-image: url("https://images.unsplash.com/photo-1603682233578-5fc0d6f50038?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
 }

@@ -16,7 +16,11 @@
                             <img class="card-img-top" src="{{photo['medium']}}" width="100%">
                             <div class="card-body">
                              <h5 class="card-text">{{pet['name']}} | {{pet['age']}}</h5>
-                             <p>{{pet['description']}}</p>
+                             {% if pet['description'] == None %}
+                                <p>Find me at your nearest shelter</p>
+                             {% else %}
+                                 <p>{{pet['description']}}</p>
+                             {% endif %}
                              <button type="button" class="btn"><a href="{{pet['url']}}" target="_blank">Learn more</a></button>
                             </div>
                         </div>

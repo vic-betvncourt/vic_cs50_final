@@ -1,71 +1,73 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <div class="container form-homepage p-5">
-    <!-- form to request the type of animal user is looking for -->
-        <form action="/results" method="get">
-            <h2>Let's find your perfect match</h2>
-            <div class="form-group py-3">
-                <h4>My perfect match would be a 
-                    <select name="animal_type" id="animaltype" class="select-form">
-                        <option disabled selected>Animal</option>
-                        {% for type in animal_types %}
-                        <option value="{{type['name']}}">{{type['name']}}</option>
-                        {% endfor %}
-                    </select>
-                </h4>
-            </div>
-            <div class="form-group py-3">
-                <h4>Let's find pets around your location</h4>
-                <input type="text" id="validationCustom05" name="zip" placeholder="Zip" class="zip-text" required>
-                <div class="invalid-feedback">
-                    Please provide a valid zip.
+    <div id="pet-form" class="container-fluid p-5">
+        <div class=" container form-homepage col-md-6 p-5">
+        <!-- form to request the type of animal user is looking for -->
+            <form action="/results" method="get">
+                <h2>Let's find your perfect match</h2>
+                <div class="form-group py-3">
+                    <h4>My perfect match would be a 
+                        <select name="animal_type" id="animaltype" class="select-form">
+                            <option disabled selected>Animal</option>
+                            {% for type in animal_types %}
+                            <option value="{{type['name']}}">{{type['name']}}</option>
+                            {% endfor %}
+                        </select>
+                    </h4>
                 </div>
-            </div>
-            <div class="form-group py-3">
-                    <h4 id="question">Select a coat suitable for your household</h4>
-                <div class="answer">
-                    <!-- baby, young, adult, senior -->
-                    <input type="checkbox" id="animal_age" name="animal_age" value="baby">
-                    <label for="baby"> Baby </label>
-                    <input type="checkbox" id="animal_age" name="animal_age" value="young">
-                    <label for="young"> Young </label>
-                    <input type="checkbox" id="animal_age" name="animal_age" value="adult">
-                    <label for="adult"> Adult </label>
-                    <input type="checkbox" id="animal_age" name="animal_age" value="senior">
-                    <label for="senior"> Senior </label>
-                    <input type="checkbox" id="animal_age" name="animal_age" value="">
-                    <label for="none"> No Preference </label>                
+                <div class="form-group py-3">
+                    <h4>Let's find pets around your location</h4>
+                    <input type="text" id="validationCustom05" name="zip" placeholder="Zip" class="zip-text" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid zip.
+                    </div>
                 </div>
-            </div>
-            <div class="form-group py-3">
-                <h4 id="question">Any children in the household?</h4>
-                <div class="answer">
-                    <input type="radio" name="children" value="true">
-                    <label for="yes">Yes</label>
-                    <input type="radio" name="children" value="false">
-                    <label for="no">No</label>
+                <div class="form-group py-3">
+                        <h4 id="question">Select a coat suitable for your household</h4>
+                    <div class="answer">
+                        <!-- baby, young, adult, senior -->
+                        <input type="checkbox" id="animal_age" name="animal_age" value="baby">
+                        <label for="baby"> Baby </label>
+                        <input type="checkbox" id="animal_age" name="animal_age" value="young">
+                        <label for="young"> Young </label>
+                        <input type="checkbox" id="animal_age" name="animal_age" value="adult">
+                        <label for="adult"> Adult </label>
+                        <input type="checkbox" id="animal_age" name="animal_age" value="senior">
+                        <label for="senior"> Senior </label>
+                        <input type="checkbox" id="animal_age" name="animal_age" value="">
+                        <label for="none"> No Preference </label>                
+                    </div>
                 </div>
-            </div>
-            <div class="form-group py-3" id="dogs">
-                <h4 id="question">Any dogs in the household?</h4>
-                <div class="answer">
-                    <input type="radio" name="dogs" value="true">
-                    <label for="yes">Yes</label>
-                    <input type="radio" name="dogs" value="false">
-                    <label for="no">No</label>
+                <div class="form-group py-3">
+                    <h4 id="question">Any children in the household?</h4>
+                    <div class="answer">
+                        <input type="radio" name="children" value="true">
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="children" value="false">
+                        <label for="no">No</label>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group py-3">
-                <h4 id="question">Any cats in the household?</h4>
-                <div class="answer">
-                    <input type="radio" name="cats" value="true">
-                    <label for="yes">Yes</label>
-                    <input type="radio" name="cats" value="false">
-                    <label for="no">No</label>
+                <div class="form-group py-3" id="dogs">
+                    <h4 id="question">Any dogs in the household?</h4>
+                    <div class="answer">
+                        <input type="radio" name="dogs" value="true">
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="dogs" value="false">
+                        <label for="no">No</label>
+                    </div>
                 </div>
-            </div>
-            <input type="submit" class="submit-btn">
-        </form>
+                <div class="form-group py-3">
+                    <h4 id="question">Any cats in the household?</h4>
+                    <div class="answer">
+                        <input type="radio" name="cats" value="true">
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="cats" value="false">
+                        <label for="no">No</label>
+                    </div>
+                </div>
+                <input type="submit" class="submit-btn">
+            </form>
+        </div>
     </div>
 {% endblock %}
